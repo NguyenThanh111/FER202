@@ -1,38 +1,162 @@
-.App {
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  /* Bootstrap 5.3 data-bs-theme drives these custom colors too. */
+  --orchid-bg: #f5f8f6;
+  --orchid-heading: #1d5637;
+  --orchid-muted: #65736b;
+  --orchid-border: #e0e8e3;
+  --orchid-list-label: #1d5637;
+  --orchid-eyebrow: #b04775;
+
+  color: var(--bs-body-color);
+  background: var(--orchid-bg);
+}
+
+[data-bs-theme='dark'] body {
+  --orchid-bg: #101613;
+  --orchid-heading: #7fd4a6;
+  --orchid-muted: #9fb0a7;
+  --orchid-border: #26332c;
+  --orchid-list-label: #7fd4a6;
+  --orchid-eyebrow: #f191b6;
+}
+
+.orchids-page {
+  padding: 48px 0;
+}
+
+.page-header {
+  margin-bottom: 36px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.page-header h1 {
+  margin: 8px 0 12px;
+  color: var(--orchid-heading);
+  font-size: clamp(2rem, 5vw, 3.5rem);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.page-header p {
+  color: var(--orchid-muted);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.page-header .eyebrow {
+  margin: 0;
+  color: var(--orchid-eyebrow);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.search-box {
+  max-width: 360px;
+  margin: 0;
+}
+
+.orchid-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.orchid-card {
+  overflow: hidden;
+  border: 1px solid var(--orchid-border);
+  border-radius: 18px;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.orchid-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 32px rgba(39, 76, 55, 0.16);
+}
+
+.orchid-image-wrapper {
+  position: relative;
+}
+
+.orchid-image-wrapper .card-img-top {
+  height: 220px;
+  object-fit: cover;
+}
+
+.special-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  padding: 6px 11px;
   color: white;
+  background: #b04775;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
 }
 
-.App-link {
-  color: #61dafb;
+.rating {
+  color: #e6a700;
+  font-size: 1.25rem;
+  letter-spacing: 2px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.detail-image {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  object-fit: cover;
+}
+
+.detail-list dt {
+  color: var(--orchid-list-label);
+  font-weight: 600;
+}
+
+.detail-list dd {
+  color: var(--orchid-muted);
+}
+
+.signed-in-note {
+  color: var(--orchid-muted);
+}
+
+.app-navbar {
+  background: var(--orchid-heading);
+}
+
+[data-bs-theme='dark'] .app-navbar {
+  background: #17352a;
+}
+
+.welcome-text {
+  color: #fff;
+  font-weight: 600;
+}
+
+.theme-toggle {
+  white-space: nowrap;
+}
+
+@media (max-width: 1000px) {
+  .orchid-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media (max-width: 760px) {
+  .orchid-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .orchid-grid {
+    grid-template-columns: 1fr;
   }
 }
