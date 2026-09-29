@@ -18,16 +18,16 @@ export default function Orchids() {
         <header className="page-header">
           <p className="eyebrow">Orchid collection</p>
           <h1>Discover Our Orchids</h1>
-          <p>Explore a collection of {ListOfOrchids.length} beautiful orchids.</p>
+          {/* <p>Explore a collection of {ListOfOrchids.length} beautiful orchids.</p> */}
 
-          <input
+          {/* <input
             type="search"
             className="form-control search-box"
             placeholder="Search orchid by name..."
             aria-label="Search orchid by name"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-          />
+          /> */}
         </header>
 
         {visibleOrchids.length === 0 ? (

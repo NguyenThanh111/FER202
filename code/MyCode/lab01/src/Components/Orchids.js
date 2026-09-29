@@ -7,7 +7,7 @@ export default function Orchids() {
       <header className="page-header">
         <p className="eyebrow">Orchid collection</p>
         <h1>Discover Our Orchids</h1>
-        <p>Explore a collection of {ListOfOrchids.length} beautiful orchid.</p>
+        {/* <p>Explore a collection of {ListOfOrchids.length} beautiful orchid.</p> */}
       </header>
 
       <section className="orchid-grid">
