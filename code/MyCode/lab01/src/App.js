@@ -1,12 +1,10 @@
-import './App.css';
-import Orchids from './Components/Orchids';
+import "./App.css";
+import Orchids from "./Components/Orchids";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <Orchids/>
-      </header>
+      <Orchids />
     </div>
   );
 }
